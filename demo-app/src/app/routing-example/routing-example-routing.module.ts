@@ -5,10 +5,11 @@ import { ChildBComponent } from './child-b/child-b.component';
 import { FirstComponent } from './first/first.component';
 
 const routes: Routes = [
-  { path: '', component: FirstComponent, children: [
-    { path: 'child-a', component: ChildAComponent },
-    { path: 'child-b', component: ChildBComponent },
-  ] }
+  { path: '', component: FirstComponent, children: [  // /first-component
+    { path: 'child-a', component: ChildAComponent },  // /first-component/child-a
+    { path: 'child-b', component: ChildBComponent },  // /first-component/child-a
+  ] },
+  {path: 'childa', component: ChildAComponent }      // /first-component/childa
 ];
 
 @NgModule({
