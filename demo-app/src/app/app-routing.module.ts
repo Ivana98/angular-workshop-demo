@@ -9,6 +9,7 @@ const routes: Routes = [
   //{ path: '', loadChildren: () => import('./base/base.module').then(m => m.BaseModule),
   { path: '', component: HomepageComponent, children: [
       { path: 'first-component', loadChildren: () => import('./routing-example/routing-example.module').then(m => m.RoutingExampleModule) },
+      { path: 'http-demo', loadChildren: () => import('./sending-requests/sending-requests.module').then(m => m.SendingRequestsModule) },
     ]
   },
   { path: '**', component: PageNotFoundComponent }

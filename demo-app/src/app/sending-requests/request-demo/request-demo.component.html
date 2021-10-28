@@ -1,0 +1,12 @@
+<mat-card class="card">
+
+    <div *ngIf="loading else loaded">
+        <!-- <mat-spinner color="warn"></mat-spinner> -->
+        loading ...
+    </div>
+
+    <ng-template #loaded>
+        {{ message }}
+    </ng-template>
+
+</mat-card>

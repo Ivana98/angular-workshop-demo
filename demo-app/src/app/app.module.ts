@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BaseModule } from './base/base.module';
 import { RoutingExampleModule } from './routing-example/routing-example.module';
 import { HomepageComponent } from './homepage/homepage.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SendingRequestsModule } from './sending-requests/sending-requests.module';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,12 @@ import { HomepageComponent } from './homepage/homepage.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    // import HttpClientModule after BrowserModule.
+    HttpClientModule,
     BaseModule,
     AppRoutingModule,
     RoutingExampleModule,
+    SendingRequestsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
