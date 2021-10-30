@@ -13,6 +13,7 @@ import { RoutingExampleModule } from './routing-example/routing-example.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SendingRequestsModule } from './sending-requests/sending-requests.module';
+import { FormsExampleModule } from './forms-example/forms-example.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SendingRequestsModule } from './sending-requests/sending-requests.modul
     BaseModule,
     AppRoutingModule,
     RoutingExampleModule,
-    SendingRequestsModule
+    SendingRequestsModule,
+    FormsExampleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: '', component: HomepageComponent, children: [
       { path: 'first-component', loadChildren: () => import('./routing-example/routing-example.module').then(m => m.RoutingExampleModule) },
       { path: 'http-demo', loadChildren: () => import('./sending-requests/sending-requests.module').then(m => m.SendingRequestsModule) },
+      { path: 'forms-example', loadChildren: () => import('./forms-example/forms-example.module').then(m => m.FormsExampleModule) },
     ]
   },
   { path: '**', component: PageNotFoundComponent }

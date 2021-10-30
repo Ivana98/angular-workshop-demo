@@ -1,0 +1,46 @@
+<mat-card class="card">
+    <mat-card-title> My profile </mat-card-title>
+    <mat-card-subtitle>Template-driven form</mat-card-subtitle>
+    <mat-card-content>
+
+        <form #myTemplateForm="ngForm">
+            <div class="form-control">
+                <div [hidden]="name.valid || name.untouched" class="validation">
+                    <small *ngIf="name.errors?.required"> Name is required. </small>
+                    <small *ngIf="name.errors?.minlength"> Name must be at least 3 characters long. </small>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" id="name" [(ngModel)]="person.name" name="name" #name="ngModel"
+                        required minlength="3">
+                </mat-form-field>
+            </div>
+
+            <div class="form-control">
+                <div [hidden]="surname.valid || surname.untouched" class="validation">
+                    <small> Surname is required </small>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Surname</mat-label>
+                    <input matInput type="text" id="surname" required [(ngModel)]="person.surname" name="surname"
+                    #surname="ngModel">
+                </mat-form-field>
+            </div>
+
+            <div class="form-control">
+                <mat-form-field appearance="outline">
+                    <mat-label>My info</mat-label>
+                    <input matInput type="text" id="info" [(ngModel)]="person.info" name="info">
+                </mat-form-field>
+            </div>
+            <div class="buttons">
+                <button mat-raised-button color="primary" (click)="fillForm()" id="leftBtn"> Fill form </button>
+                <button mat-raised-button color="accent" (click)="myTemplateForm.reset()"> Reset form </button>
+            </div>
+        </form>
+
+    </mat-card-content>
+    <mat-card-footer>
+        {{ person | json }}
+    </mat-card-footer>
+</mat-card>
