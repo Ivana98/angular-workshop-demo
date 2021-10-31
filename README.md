@@ -1,1 +1,1 @@
-# angular-workshop-FE
+# Angular Workshop Demo
