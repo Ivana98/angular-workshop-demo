@@ -1,0 +1,46 @@
+.card {
+    width: fit-content;
+}
+
+form {
+    width: 500px;
+}
+
+mat-card-title, mat-card-subtitle {
+    text-align: center;
+}
+
+mat-card-footer {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+mat-form-field {
+    width: 400px;
+}
+
+.form-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.validation {
+    color: red;
+    background-color: pink;
+    border-radius: 3px;
+    text-align: left;
+    width: 400px;
+    padding-left: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftBtn {
+    margin-right: 10px;
+}

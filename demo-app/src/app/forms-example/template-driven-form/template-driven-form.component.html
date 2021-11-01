@@ -5,26 +5,26 @@
 
         <form #myTemplateForm="ngForm">
             <div class="form-control">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" id="name" [(ngModel)]="person.name" name="name" #name="ngModel" required
+                        minlength="3">
+                </mat-form-field>
                 <div [hidden]="name.valid || name.untouched" class="validation">
                     <small *ngIf="name.errors?.required"> Name is required. </small>
                     <small *ngIf="name.errors?.minlength"> Name must be at least 3 characters long. </small>
                 </div>
-                <mat-form-field appearance="outline">
-                    <mat-label>Name</mat-label>
-                    <input matInput type="text" id="name" [(ngModel)]="person.name" name="name" #name="ngModel"
-                        required minlength="3">
-                </mat-form-field>
             </div>
 
             <div class="form-control">
-                <div [hidden]="surname.valid || surname.untouched" class="validation">
-                    <small> Surname is required </small>
-                </div>
                 <mat-form-field appearance="outline">
                     <mat-label>Surname</mat-label>
                     <input matInput type="text" id="surname" required [(ngModel)]="person.surname" name="surname"
-                    #surname="ngModel">
+                        #surname="ngModel">
                 </mat-form-field>
+                <div [hidden]="surname.valid || surname.untouched" class="validation">
+                    <small> Surname is required </small>
+                </div>
             </div>
 
             <div class="form-control">
@@ -33,6 +33,7 @@
                     <input matInput type="text" id="info" [(ngModel)]="person.info" name="info">
                 </mat-form-field>
             </div>
+
             <div class="buttons">
                 <button mat-raised-button color="primary" (click)="fillForm()" id="leftBtn"> Fill form </button>
                 <button mat-raised-button color="accent" (click)="myTemplateForm.reset()"> Reset form </button>

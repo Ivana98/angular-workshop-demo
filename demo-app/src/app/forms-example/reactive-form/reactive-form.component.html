@@ -1,1 +1,51 @@
-<p>reactive-form works!</p>
+<mat-card class="card">
+    <mat-card-title> My profile </mat-card-title>
+    <mat-card-subtitle>Reactive form</mat-card-subtitle>
+    <mat-card-content>
+
+        <form [formGroup]="myInfoForm">
+            <div class="form-control">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" id="firstName" formControlName="firstName">
+                </mat-form-field>
+                <div *ngIf="myInfoForm.controls.firstName.invalid && (myInfoForm.controls.firstName.dirty || myInfoForm.controls.firstName.touched)" class="validation">
+                    <div *ngIf="myInfoForm.controls.firstName.errors?.required">
+                        Name is required.
+                    </div>
+                    <div *ngIf="myInfoForm.controls.firstName.errors?.pattern">
+                        Name must start with capital letter.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <mat-form-field appearance="outline">
+                    <mat-label>Surname</mat-label>
+                    <input matInput type="text" id="lastName" formControlName="lastName">
+                </mat-form-field>
+                <div *ngIf="myInfoForm.controls.lastName.invalid && (myInfoForm.controls.lastName.dirty || myInfoForm.controls.lastName.touched)" class="validation">
+                    <div *ngIf="myInfoForm.controls.lastName.errors?.required">
+                        Surname is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <mat-form-field appearance="outline">
+                    <mat-label>My info</mat-label>
+                    <input matInput type="text" id="info" formControlName="info">
+                </mat-form-field>
+            </div>
+
+            <div class="buttons">
+                <button mat-raised-button color="primary" (click)="fillForm()" id="leftBtn"> Fill form </button>
+                <button mat-raised-button color="accent" (click)="resetForm()"> Reset form </button>
+            </div>
+        </form>
+
+    </mat-card-content>
+    <mat-card-footer>
+        {{ myInfoForm.value | json }}
+    </mat-card-footer>
+</mat-card>
