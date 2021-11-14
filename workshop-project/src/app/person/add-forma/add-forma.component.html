@@ -1,0 +1,25 @@
+<div>
+    <form [formGroup]="addForma">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Ime i Prezime</mat-label>
+            <input matInput placeholder="pr. Miki Milane" formControlName="firstName">
+        </mat-form-field>
+
+        <div formGroupName = "address">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>City:</mat-label>
+                <input matInput placeholder="pr. Belgrade" formControlName="city">
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" [disabled]="!addForma.valid" (click) = "addFunkcija()">Add person</button>
+        <button mat-raised-button color="warn"  (click) = "fillForm()">Fill form</button>
+        {{formValue | json}}
+    </form>
+
+
+</div>
+
+<div style="color:red;">
+    {{myParentData}}
+</div>

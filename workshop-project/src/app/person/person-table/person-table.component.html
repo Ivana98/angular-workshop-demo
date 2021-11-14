@@ -1,3 +1,6 @@
+<app-add-forma [myParentData]="selektovanaOsoba"> ></app-add-forma>
+
+
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="mojiPodaci">
 
@@ -21,8 +24,15 @@
             <td mat-cell *matCellDef="let person"> {{person.address.city}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let person">
+                <button mat-raised-button color="primary" (click)="selectRow(person)">Select row</button>
+            </td>
+        </ng-container>
+
         <tr mat-header-row *matHeaderRowDef="prikazaneKolone"></tr>
-        <tr mat-row *matRowDef="let row; columns: prikazaneKolone;"></tr>
+        <tr mat-row *matRowDef="let row; columns: prikazaneKolone;" ></tr>
 
     </table>
 

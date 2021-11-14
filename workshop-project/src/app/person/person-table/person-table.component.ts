@@ -10,7 +10,9 @@ import { HttpReqService } from 'src/app/services/http-req.service';
 })
 export class PersonTableComponent implements OnInit {
 
-  prikazaneKolone: string[] = ['id', 'name', 'email', 'address'];
+  selektovanaOsoba= "";
+
+  prikazaneKolone: string[] = ['id', 'name', 'email', 'address', 'actions'];
   ELEMENT_DATA: Person[] = [
     { id: 1, name: 'Dr Nice', email: 'nice@xyz.co', address: { city: 'Chicago', street: '2010 Patterson Fork Road'}, password: 'ghdf45' },
     { id: 2, name: 'Narco', email: 'narco@xyz.co', address: { city: 'Chicago', street: '2010 Patterson Fork Road'}, password: 'g4f45ss' },
@@ -36,6 +38,12 @@ export class PersonTableComponent implements OnInit {
       data => { this.ELEMENT_DATA = data; }
     );
     */
+  }
+
+  selectRow(person: Person) {
+    console.log("PRIKAZUJEMO OSOBU");
+    console.log(person);
+    this.selektovanaOsoba = person.name;
   }
 
 }
