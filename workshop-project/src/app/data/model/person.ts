@@ -6,8 +6,8 @@ export interface Person {
     name: string,
     //surname: string,
     email: string,
-    birthDate: Date,
-    role: PersonRole,
+    //birthDate: Date,
+    //role: PersonRole,
     address: Address,
     password: string
 }
